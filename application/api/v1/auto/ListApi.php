@@ -32,8 +32,7 @@ final class ListApi extends BaseApi
             } else {
                 $where = DbUtil::prepareCommandAsInt(
                     'WHERE `id` =',
-                    $id,
-                    0
+                    $id
                 );
 
                 $response = $this->query($sql . $where);
@@ -51,7 +50,7 @@ final class ListApi extends BaseApi
                     $this->columns
                 );
 
-                $direction = DbUtil::prepareCommandAsStr(
+                $direction = empty($order) ? '' : DbUtil::prepareCommandAsStr(
                     '',
                     strtoupper($values['order'][1]),
                     array('ASC', 'DESC')
@@ -59,14 +58,12 @@ final class ListApi extends BaseApi
 
                 $limit = DbUtil::prepareCommandAsInt(
                     'LIMIT',
-                    $values['limit'],
-                    100
+                    $values['limit'][0]
                 );
 
-                $offset = DbUtil::prepareCommandAsInt(
+                $offset = empty($limit) ? '' : DbUtil::prepareCommandAsInt(
                     'OFFSET',
-                    $values['offset'],
-                    0
+                    $values['offset'][0]
                 );
 
                 $response = $this->query($sql . $order . $direction . $limit . $offset);

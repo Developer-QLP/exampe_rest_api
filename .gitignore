@@ -1,3 +1,4 @@
 docker/mysql/data/* !.gitkeep
 docker/mysql/scripts/* !.gitkeep
 logs/apache2/* !.gitkeep
+.idea

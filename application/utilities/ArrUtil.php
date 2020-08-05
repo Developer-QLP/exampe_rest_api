@@ -6,7 +6,7 @@
 
 final class ArrUtil {
     //region Public methods
-    public static function matching($values, $original) {
+    public static function matching(array $values, array $original) {
         if (count($values) !== count($original)) {
             return false;
         } else {
@@ -17,6 +17,14 @@ final class ArrUtil {
             }
             return empty($original);
         }
+    }
+
+    public static function formattingValues(string $format, array $values) {
+        $result = array();
+        foreach ($values as $key => $value) {
+            array_push($result, trim(sprintf($format, $value)));
+        }
+        return $result;
     }
     //endregion
 }
