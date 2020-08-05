@@ -13,7 +13,7 @@
  $ mkdir ~/repositories && cd ~/repositories
  $ git clone https://github.com/Developer-QLP/exampe_rest_api.git && cd ./exampe_rest_api
  $ git flow init -d
- $ docker-compose up --build
+ $ sudo docker-compose up --build
  ```
 
 **Если проект по какой-то причине не запускается, выполните следующие команды:**
@@ -22,7 +22,10 @@
  $ sudo docker stop $(docker ps -a -q)
  $ sudo docker rm $(docker ps -a -q)
  $ sudo docker rmi -f $(docker images -a -q)
+<<<<<<< HEAD
  $ sudo rm -R /docker/mysql/data/*
+=======
+>>>>>>> 0e1f5e8941c3da74b6acac2b23a113ac82051430
  ```
 
 После выполнения команд попробуйте снова собрать и запустить проект. При этом следует учитывать, что выполнение этих команд приведет к **удалению всех контейнеров и образов** docker, если у вас есть личные проекты, то необходимо вручную удалить соответсвующие проекту контейнеры и образы и повторить ранее описанные действия.
