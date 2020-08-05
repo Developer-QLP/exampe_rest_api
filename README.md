@@ -12,13 +12,13 @@
  $ mkdir ~/repositories && cd ~/repositories
  $ git clone https://github.com/Developer-QLP/exampe_rest_api.git && cd ./exampe_rest_api
  $ git flow init -d
- $ docker-compose up --build
+ $ sudo docker-compose up --build
  ```
 **Если проект по какой-то причине не запускается, выполните следующие команды:**
  ```sh
- $ docker stop $(docker ps -a -q)
- $ docker rm $(docker ps -a -q)
- $ docker rmi -f $(docker images -a -q)
+ $ sudo docker stop $(docker ps -a -q)
+ $ sudo docker rm $(docker ps -a -q)
+ $ sudo docker rmi -f $(docker images -a -q)
  ```
 После выполнения команд попробуйте снова собрать и запустить проект. При этом следует учитывать, что выполнение этих команд приведет к **удалению всех контейнеров и образов** docker, если у вас есть личные проекты, то необходимо вручную удалить соответсвующие проекту контейнеры и образы и повторить ранее описанные действия.
 ## Использование
