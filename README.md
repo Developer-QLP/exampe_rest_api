@@ -10,7 +10,7 @@
  ## Настройка и запуск
  ``` sh
  $ mkdir ~/repositories && cd ~/repositories
- $ git clone [url] && cd ~/[name]
+ $ git clone https://github.com/Developer-QLP/exampe_rest_api.git && cd ./exampe_rest_api
  $ git flow init -d
  $ docker-compose up --build
  ```
